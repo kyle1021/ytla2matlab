@@ -1,0 +1,8 @@
+mfile: jupiter-a.ytla7X.mrgh5
+ctable: primary
+ext: None
+select: ['-10:-510', '10:510']
+cont_subtract: 0
+ws: 20.0
+ds: 0.2
+use_pcenter: 0

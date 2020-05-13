@@ -1,0 +1,5 @@
+# unit     peak(Jy/beam)   Tint(sec)
+unit_000     993.99   601
+unit_001     988.45   1202
+stacked      990.34   1803
+mean         991.22   1803

@@ -1,0 +1,34 @@
+YTLA_matlab tool notes:
+
+** Added tools:
+ytlaImport.m
+    - ytlaConf.m: define YTLA specific parameters
+    - ytlaLoadh5.m: extract info from the H5 files and put them into a 'ytla' struct
+    - ytla_uvw.m: use the skypol to calculate u,v,w
+    - ytlaTsys.m: given the 'ytla' struct, convert variance into Tsys
+		(assuming apEff = 0.5, or jyperk ~ 5000)
+
+
+
+** modification to SZA-CO/
+info_antenna.m
+    'YTLA'
+    taperType --> Gaussian
+    taperRadius --> 45.43 (cm)
+    priRadius -->   60.0  (cm)
+    secRadius -->   19.0  (cm)
+
+uvIllum.m
+    for Gaussian illumination, the pattern is defined as
+    illumPattern = exp(log(0.5) * (r/R0)^2)
+
+    the 'taper radius' R0 is related to the 'edge taper' Te as
+    R0 = R1 * sqrt(20 * log(2) / (Te * log(10)))
+    (R1 = primary radius)
+
+    For ALMA, Te = 11.0 dB
+    For YTLA, Te = 10.5 dB
+
+    In both cases, R0 < R1
+    Therefore, I changed the illumination outer cutoff to be R1, instead of min(R1,R0).
+
