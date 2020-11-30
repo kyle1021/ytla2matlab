@@ -2,9 +2,10 @@ nAnts  = 7;
 nBase  = nAnts * (nAnts-1) / 2;
 nChan  = 1024;
 nWin   = 2;
-nPlat  = 1;
+nPlat  = 0;
 
-bw0    = 2240.;		    % MHz
+%%bw0    = 2240.;		    % MHz
+bw0    = 1600.;		    % MHz
 delFreq = bw0/nChan*1e6 ;   % Hz
 
 %% ytla7-1.4m config
